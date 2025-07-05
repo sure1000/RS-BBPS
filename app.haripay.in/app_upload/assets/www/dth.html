@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+    <title>DTH Recharge</title>
+    <link rel="stylesheet" href="style.css">
+	<script>const PAGE ='DTH_RECHARGE';</script>
+  </head>
+  <style>
+  .btn-success:hover, .btn-success:focus {
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+}
+	.btn-warning:hover, .btn-warning:focus {
+    color: var(--bs-dark);
+    background-color: var(--bs-warning);
+    border-color: #ffaf00;
+}
+.form-control {
+border-radius: 2rem;
+}
+.discount-coupon-card .coupon-text-wrap h5 {
+    margin-right: 10px;
+	border-right: 0px;
+}
+.discount-coupon-card {
+    background-color: #9c535d !important;
+	    margin-bottom: 5px;
+}
+.card .card-body {
+    padding: 0.3rem;
+}
+.p_result {
+  width: 100%;
+  height: 200px;
+  overflow: scroll;
+}
+.plan_result_tab {
+  width: 100%;
+  height: 40px;
+  overflow: auto;
+}
+  </style>
+  <body>
+    <!-- Preloader-->
+  <div id="loading">
+  <img id="loading-image" src="img/loder.gif" alt="Loading..." />
+</div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+      <div class="container h-100 d-flex align-items-center justify-content-between">
+        <!-- Back Button-->
+        <div class="back-button"><a href="home.html"><i class="lni lni-arrow-left"></i></a></div>
+        <!-- Page Title-->
+        <div class="page-heading">
+          <h6 class="mb-0">DTH Recharge</h6>
+        </div>
+        <!-- Navbar Toggler-->
+        <div class="logo-wrapper"><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i></a></div>
+      </div>
+    </div>
+
+    <!-- Side Nav Wrapper-->
+    <div id="mobile_recharge_form" class="page-content-wrapper">
+      <div class="container">
+        <!-- Checkout Wrapper-->
+        <div class="checkout-wrapper-area py-3">
+          <!-- Credit Card Info-->
+          <div class="credit-card-info-wrapper">
+            <div class="pay-credit-card-form">
+              <form action="#" method="">
+                <div class="mb-3">
+                  <input class="form-control" type="number" id="number" placeholder="DTH Number" value="" style="font-size: 20px;font-weight: bold;">
+                </div>
+                    <div class="mb-3">
+                     <select id="provider" class="form-control" style="font-size: 20px;font-weight: bold;">
+				  </select>
+				  </div>
+  
+				<div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                     
+                      <input class="form-control" type="number" placeholder="Amount" id="amount" value="" style="font-size: 20px;font-weight: bold;">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                     
+                      <input class="form-control" type="number" placeholder="Pin" id="pin" value="" style="font-size: 20px;font-weight: bold;">
+                    </div>
+                  </div>
+                </div>
+				<hr>
+
+               
+              </form>
+			  				<div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                     
+                      <input class="btn btn-success btn-lg w-100" type="button" id="dth_info" value="DTH Info">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                     
+                      <input class="btn btn-warning btn-lg w-100" type="submit" id="mobile_recharge" value="Pay Now">
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+		<div id="plan_result_tab" style="display: none;"class="plan_result_tab">
+		
+		</div>
+		<div id="plan_result" style="display: none;"class="p_result">
+		</div>
+		<div id="result" style="display: none;"class="p_result">
+		</div>
+		<div id="dth_info_div" style="display: none;">
+		<div class="card-body">
+		
+			  <hr><a>Status : <a id="Status_dth_info" style="margin-left: 50px;">Active</a></a><hr>
+			  <a>Name : <a id="name_dth_info"style="margin-left: 50px;">Shiba Narayan Tripathy</a></a><hr>
+			  <a>Available Balance : <a id="balance_dth_info"style="margin-left: 50px;">1000</a></a><hr>
+			  <a>Next Recharge : <a id="recharge_date_dth_info"style="margin-left: 50px;">20/12/2022</a></a><hr>
+			  <a>Recharge Amount: <a id="recharge_dth_info" style="margin-left: 50px;">320</a></a><hr>
+			  <a>Plan : <a id="plan_details_dth_info" style="margin-left: 50px;">Gujarathi Basic with Mega Shine Subscription Monthly Renewal</a></a><hr><br>	  
+		</div>
+		</div>
+      </div>
+    </div>
+	<div id="mobile_result" class="page-content-wrapper" style="display: none;">
+      <div class="container">
+         <div class="card-body">
+              <img id="icon_status" src="img/pending-icon.png" style="height:120px;width:120px;margin-left: 29%;"><hr>
+			  <a>Status : </a><a style="margin-left: 50px;" id="t_status">0</a><hr>
+			  <a>Amount : </a><a style="margin-left: 40px;" id="t_amount">0</a><hr>
+			  <a>TXN ID : </a><a style="margin-left: 45px;" id="t_opid">0</a><hr>
+				<br>
+			  <a class="btn btn-warning btn-sm" id="aeps_back">Back</a>
+			  <a class="btn btn-success btn-sm" id="aeps_back_home" style="margin-left: 156px;">Home</a>
+			  
+		</div>
+      </div>
+    </div>
+    <!-- Internet Connection Status-->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Footer Nav-->
+    <!-- All JavaScript Files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/default/jquery.passwordstrength.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jarallax.min.js"></script>
+    <script src="js/jarallax-video.min.js"></script>
+    <script src="js/default/dark-mode-switch.js"></script>
+    <script src="js/default/no-internet.js"></script>
+    <script src="js/default/active.js"></script>
+    <script src="js/pwa.js"></script>
+	<script src="js/custom.js"></script>
+  </body>
+</html>

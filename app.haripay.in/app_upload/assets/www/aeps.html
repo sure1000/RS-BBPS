@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	​<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+    <!-- Title-->
+    <title>Aeps</title>
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <button id="btnStartActivityPickContact">Scan</button><br><br><br>
+  <button id="aeps_submit">Submit</button>
+<br><br>
+    <a>RESULT</a>
+<input type="text" name="startActivityResultData" id="startActivityResultData"><br>
+  </body>
+  <script>
+  document.getElementById("btnStartActivityPickContact").addEventListener("click", startActivityPickContact);
+  document.getElementById("aeps_submit").addEventListener("click", submit);
+alert("hii");
+function startActivityPickContact()
+{
+        window.plugins.intentShim.startActivityForResult(
+            {
+                action: "in.gov.uidai.rdservice.fp.CAPTURE",
+               // url: "content://com.android.contacts/contacts",
+			   
+			   extras: {"PID_OPTIONS": "<PidOptions ver=\"1.0\"><Opts fCount=\"1\" fType=\"0\" format=\"0\" timeout=\"10000\" pidVer=\"2.0\" posh=\"LEFT_THUMB\"  /></PidOptions>"},
+                requestCode: 1
+            },
+            function(intent)
+            {
+                if (intent.extras.requestCode == 1 && intent.extras.resultCode == window.plugins.intentShim.RESULT_OK)
+                {
+					
+					var result = intent.extras.PID_DATA;
+                    console.log('PID_DATA: ' +  result);
+					alert(result);
+					//$('#pTest').text('test');
+					document.getElementById('startActivityResultData').value = result;
+				}
+                else
+                {
+                    document.getElementById('startActivityResultData').value = "Picked Contacted Canceled";
+                }
+            },
+            function()
+            {
+                document.getElementById('startActivityResultData').innerHTML = "StartActivityForResult failure";
+            }
+        );
+}
+function submit() {
+var pid_data = document.getElementById("startActivityResultData").value;
+$.ajax({
+    type: "POST",
+    url: "https://partner.kwikpays.in/android_apis/aeps_test.php",
+    dataType: "text",
+    data: "data="+ pid_data,
+    success: function (res) {
+        alert(res);
+		console.log(res);
+    },
+    error: function (res) {
+	console.log(res);
+        alert(res.statusText);
+    }
+});
+}
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+</html>

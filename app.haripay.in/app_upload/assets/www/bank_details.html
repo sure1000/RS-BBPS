@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+    <!-- The above tags *must* come first in the head, any other head content must come *after* these tags-->
+    <!-- Title-->
+    <title>Bank Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script>const PAGE ='BANK_DETAILS';</script>
+  </head>
+  <style>
+  .page-content-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+  .btn-success:hover, .btn-success:focus {
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+}
+	.btn-warning:hover, .btn-warning:focus {
+    color: var(--bs-dark);
+    background-color: var(--bs-warning);
+    border-color: #ffaf00;
+}
+.page-content-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+    margin-bottom: 4px;
+}
+<!--////////////-->
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  width: 95%;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+  </style>
+  <body>
+    <!-- Preloader-->
+  <div id="loading">
+  <img id="loading-image" src="img/loder.gif" alt="Loading..." />
+</div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+      <div class="container h-100 d-flex align-items-center justify-content-between">
+        <!-- Back Button-->
+        <div class="back-button"><a href="reports.html"><i class="lni lni-arrow-left"></i></a></div>
+        <!-- Page Title-->
+        <div class="page-heading">
+          <h6 class="mb-0">Bank Details</h6>
+        </div>
+        <!-- Navbar Toggler-->
+        <div class="logo-wrapper"><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i></a></div>
+      </div>
+	  
+    </div>
+
+    <!-- Side Nav Wrapper-->
+    <div class="page-content-wrapper">
+      <div class="container">
+        <!-- Checkout Wrapper-->
+        <div class="checkout-wrapper-area py-3">
+          <!-- Credit Card Info-->
+			<div id="results">
+					
+			</div>
+        </div>
+      </div>
+    </div>
+			
+    <!-- Internet Connection Status-->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Footer Nav-->
+    <!-- All JavaScript Files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/default/jquery.passwordstrength.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jarallax.min.js"></script>
+    <script src="js/jarallax-video.min.js"></script>
+    <script src="js/default/dark-mode-switch.js"></script>
+    <script src="js/default/no-internet.js"></script>
+    <script src="js/default/active.js"></script>
+    <script src="js/pwa.js"></script>
+	<script src="js/custom.js"></script>
+  </body>
+</html>

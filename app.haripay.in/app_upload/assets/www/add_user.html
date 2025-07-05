@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+    <title>Add User</title>
+    <link rel="stylesheet" href="style.css">
+	<script>const PAGE ='ADD_USER';</script>
+  </head>
+  <style>
+  .btn-success:hover, .btn-success:focus {
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+}
+	.btn-warning:hover, .btn-warning:focus {
+    color: var(--bs-dark);
+    background-color: var(--bs-warning);
+    border-color: #ffaf00;
+}
+  </style>
+  <body>
+  <div id="loading">
+  <img id="loading-image" src="img/loder.gif" alt="Loading..." />
+</div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+      <div class="container h-100 d-flex align-items-center justify-content-between">
+        <!-- Back Button-->
+        <div class="back-button"><a href="reports.html"><i class="lni lni-arrow-left"></i></a></div>
+        <!-- Page Title-->
+        <div class="page-heading">
+          <h6 class="mb-0">Add User</h6>
+        </div>
+        <!-- Navbar Toggler-->
+        <div class="logo-wrapper"><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i></a></div>
+      </div>
+    </div>
+
+    <!-- Side Nav Wrapper-->
+    <div class="page-content-wrapper">
+      <div class="container">
+        <!-- Checkout Wrapper-->
+        <div class="checkout-wrapper-area py-3">
+          <!-- Credit Card Info-->
+          <div class="credit-card-info-wrapper">
+            <div class="pay-credit-card-form">
+              <form id="add_user" method="post">
+				<div class="mb-3">
+                  <label for="cardNumber">Full Name</label>
+                  <input class="form-control" type="text" placeholder="Full Name" id="name" name="name" value="">
+                </div>
+				<div class="mb-3">
+                  <label for="cardNumber">Shop/Company Name</label>
+                  <input class="form-control" type="text" placeholder="Shop Name" id="company_name" name="company_name" value="">
+                </div>
+				<div class="mb-3">
+                  <label for="cardNumber">Mobile</label>
+                  <input class="form-control" type="number" placeholder="Mobile" id="mobile" name="mobile" value="">
+                </div>
+				<div class="mb-3">
+                  <label for="cardNumber">Email</label>
+                  <input class="form-control" type="email" placeholder="Email" id="email"  name="email" value="">
+                </div>
+				<div class="mb-3">
+                  <label for="cardNumber">Full Address</label>
+                  <input class="form-control" type="text" placeholder="Full Address" id="user_address" name="user_address" value="">
+                </div>
+				<div class="mb-3">
+                  <label for="cardNumber">gst no. (Optional)</label>
+                  <input class="form-control" type="text" placeholder="GST No." id="gst_no" name="gst_no" value="">
+                </div>
+				<div class="mb-3">
+                  <label for="cardNumber">pan no. (Optional)</label>
+                  <input class="form-control" type="text" placeholder="Pan No." id="pancard" name="pancard" value="">
+                </div>
+				<div class="mb-3">
+                  <label for="cardNumber">Adhaar no. (Optional)</label>
+                  <input class="form-control" type="text" placeholder="Adhaar No." id="adhaar_card" name="adhaar_card" value="">
+                </div>
+              </form>
+            </div>
+			 <button class="btn btn-warning btn-lg w-100" id="add_user_submit" type="submit">Register Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Internet Connection Status-->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Footer Nav-->
+    <!-- All JavaScript Files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/default/jquery.passwordstrength.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jarallax.min.js"></script>
+    <script src="js/jarallax-video.min.js"></script>
+    <script src="js/default/dark-mode-switch.js"></script>
+    <script src="js/default/no-internet.js"></script>
+    <script src="js/default/active.js"></script>
+    <script src="js/pwa.js"></script>
+	<script src="js/custom.js"></script>
+  </body>
+</html>

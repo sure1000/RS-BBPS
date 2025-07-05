@@ -1,0 +1,7 @@
+[08-Apr-2023 05:46:12 UTC] PHP Parse error:  syntax error, unexpected '0' (T_LNUMBER), expecting variable (T_VARIABLE) or '{' or '$' in /home2/todayrec/public_html/callback_apis17.php on line 19
+[08-Apr-2023 06:37:26 UTC] PHP Parse error:  syntax error, unexpected '0' (T_LNUMBER), expecting variable (T_VARIABLE) or '{' or '$' in /home2/todayrec/public_html/callback_apis17.php on line 19
+[08-Apr-2023 06:44:46 UTC] PHP Parse error:  syntax error, unexpected '0' (T_LNUMBER), expecting variable (T_VARIABLE) or '{' or '$' in /home2/todayrec/public_html/callback_apis17.php on line 19
+[29-May-2025 14:04:13 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /home2/mrrecha1/public_html/evastationarystore.shop/roffers.php:71
+Stack trace:
+#0 {main}
+  thrown in /home2/mrrecha1/public_html/evastationarystore.shop/roffers.php on line 71

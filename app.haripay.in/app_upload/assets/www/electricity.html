@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+    <title>Electricity</title>
+    <link rel="stylesheet" href="style.css">
+	<script>const PAGE ='ELECTRICITY';</script>
+  </head>
+  <style>
+  .btn-success:hover, .btn-success:focus {
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+}
+	.btn-warning:hover, .btn-warning:focus {
+    color: var(--bs-dark);
+    background-color: var(--bs-warning);
+    border-color: #ffaf00;
+}
+  </style>
+  <body>
+  <div id="loading">
+  <img id="loading-image" src="img/loder.gif" alt="Loading..." />
+</div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+      <div class="container h-100 d-flex align-items-center justify-content-between">
+        <!-- Back Button-->
+        <div class="back-button"><a href="reports.html"><i class="lni lni-arrow-left"></i></a></div>
+        <!-- Page Title-->
+        <div class="page-heading">
+          <h6 class="mb-0">Electricity</h6>
+        </div>
+        <!-- Navbar Toggler-->
+        <div class="logo-wrapper"><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i></a></div>
+      </div>
+    </div>
+
+    <!-- Side Nav Wrapper-->
+    <div id="mobile_recharge_form" class="page-content-wrapper">
+      <div class="container">
+        <!-- Checkout Wrapper-->
+        <div class="checkout-wrapper-area py-3">
+          <!-- Credit Card Info-->
+          <div class="credit-card-info-wrapper">
+            <div class="pay-credit-card-form">
+              <form id="electricity" method="post">
+				<div class="mb-3">
+				<input type="number"  id="number" class="form-control" placeholder="Consumer Number">
+				</div>
+				<div class="mb-3">
+				<select id="opertor" class="form-control" ></select>
+				</div>
+			<div id="billinfo">
+				<div class="mb-3">
+					<label>Full Name</label>
+					<input type="text" id="customerName" placeholder="Name" class="form-control" readonly>
+				</div>
+				<div class="mb-3">
+					<label>Bill Number</label>
+                    <input type="text" id="billNumber" placeholder="Bill Number" class="form-control" readonly>
+				</div>
+				<div class="mb-3">
+					<label>Bill Date</label>
+                    <input type="text" id="billDate" placeholder="Bill Date" class="form-control" readonly>
+				</div>
+				<div class="mb-3">
+					<label>Due Date</label>
+                    <input type="text" id="dueDate" placeholder="Due Date" class="form-control" readonly>
+				</div>
+				<div class="mb-3">
+					<label>Amount</label>
+                     <input type="text" id="amount" placeholder="Amount" class="form-control" readonly>
+				</div>
+                     <input type="hidden" id="pin" placeholder="Enter Pin" maxlength="4" autocomplete="off" class="form-control" value="">
+			</div>
+              </form>
+            </div>
+			 <button class="btn btn-warning btn-lg w-100" id="fatch_bill" type="submit">Bill Fatch</button>
+			 <button class="btn btn-warning btn-lg w-100" id="bill_recharge" type="submit">Pay Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div id="mobile_result" class="page-content-wrapper" style="display: none;">
+      <div class="container">
+         <div class="card-body">
+              <img id="icon_status" src="img/pending-icon.png" style="height:120px;width:120px;margin-left: 29%;"><hr>
+			  <a>Status : </a><a style="margin-left: 50px;" id="t_status">0</a><hr>
+			  <a>Amount : </a><a style="margin-left: 40px;" id="t_amount">0</a><hr>
+			  <a>TXN ID : </a><a style="margin-left: 45px;" id="t_opid">0</a><hr>
+				<br>
+			  <a class="btn btn-warning btn-sm" id="aeps_back">Back</a>
+			  <a class="btn btn-success btn-sm" id="aeps_back_home" style="margin-left: 156px;">Home</a>
+			  
+		</div>
+      </div>
+    </div>
+    <!-- Internet Connection Status-->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Footer Nav-->
+    <!-- All JavaScript Files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/default/jquery.passwordstrength.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jarallax.min.js"></script>
+    <script src="js/jarallax-video.min.js"></script>
+    <script src="js/default/dark-mode-switch.js"></script>
+    <script src="js/default/no-internet.js"></script>
+    <script src="js/default/active.js"></script>
+    <script src="js/pwa.js"></script>
+	<script src="js/custom.js"></script>
+  </body>
+</html>

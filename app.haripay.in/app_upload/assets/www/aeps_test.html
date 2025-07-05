@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+    <!-- Title-->
+    <title>Aeps</title>
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <button id="btnStartActivityPickContact">Scan</button>
+  <button id="aeps_submit">Scan</button>
+<br><br>
+    <a>RESULT</a>
+<input type="text" name="startActivityResultData" id="startActivityResultData"><br>
+<a>fCount</a>
+<input type="text" name="fCount" id="fCount"><br>
+<a>fType</a>
+<input type="text" name="fType" id="fType"><br>
+<a>nmPoints</a>
+<input type="text" name="nmPoints" id="nmPoints"><br>
+<a>qScore</a>
+<input type="text" name="qScore" id="qScore"><br>
+<a>dpId</a>
+<input type="text" name="dpId" id="dpId"><br>
+<a>rdsId</a>
+<input type="text" name="rdsId" id="rdsId"><br>
+<a>rdsVer</a>
+<input type="text" name="rdsVer" id="rdsVer"><br>
+<a>mi</a>
+<input type="text" name="mi" id="mi"><br>
+<a>mc</a>
+<input type="text" name="mc" id="mc"><br>
+<a>dc</a>
+<input type="text" name="dc" id="dc"><br>
+<a>srno</a>
+<input type="text" name="srno" id="srno"><br>
+<a>sysid</a>
+<input type="text" name="sysid" id="sysid"><br>
+<a>ts</a>
+<input type="text" name="ts" id="ts"><br>
+<a>Skey_ci</a>
+<input type="text" name="Skey_ci" id="Skey_ci"><br>
+<a>Skey_data</a>
+<input type="text" name="Skey_data" id="Skey_data"><br>
+<a>Hmac</a>
+<input type="text" name="Hmac" id="Hmac"><br>
+<a>data_type</a>
+<input type="text" name="data_type" id="data_type"><br>
+<a>Data_data</a>
+<input type="text" name="Data_data" id="Data_data"><br>
+<a>data</a>
+  </body>
+  <script>
+  document.getElementById("btnStartActivityPickContact").addEventListener("click", startActivityPickContact);
+alert("hii");
+function startActivityPickContact()
+{
+        window.plugins.intentShim.startActivityForResult(
+            {
+                action: "in.gov.uidai.rdservice.fp.CAPTURE",
+               // url: "content://com.android.contacts/contacts",
+			   
+			   extras: {"PID_OPTIONS": "<PidOptions ver=\"1.0\"><Opts fCount=\"1\" fType=\"0\" format=\"0\" timeout=\"10000\" pidVer=\"2.0\" posh=\"LEFT_THUMB\"  /></PidOptions>"},
+                requestCode: 1
+            },
+            function(intent)
+            {
+                if (intent.extras.requestCode == 1 && intent.extras.resultCode == window.plugins.intentShim.RESULT_OK)
+                {
+					
+					var result = intent.extras.PID_DATA;
+                    console.log('PID_DATA: ' +  result);
+					alert(result);
+					//$('#pTest').text('test');
+					document.getElementById('startActivityResultData').value = result;
+				}
+                else
+                {
+                    document.getElementById('startActivityResultData').value = "Picked Contacted Canceled";
+                }
+            },
+            function()
+            {
+                document.getElementById('startActivityResultData').innerHTML = "StartActivityForResult failure";
+            }
+        );
+}
+$("#submit_aeps").on("click", function () {
+var pid_data = $("#startActivityResultData").val();
+$.ajax({
+    type: "POST",
+    url: "http://partner.kwikpays.in/android_apis/aeps_test.php",
+    dataType: "xml",
+    contentType: "application/xml"
+    data: pid_data,
+    success: function (res) {
+        alert("XML: it works!");
+		console.log(res);
+    },
+    error: function (res) {
+        alert("XML: not working! " + res.statusText);
+    }
+});
+});
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+</html>
